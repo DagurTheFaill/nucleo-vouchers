@@ -1,0 +1,81 @@
+:root {
+  --laranja: #f36f21;
+  --laranja-escuro: #c9530f;
+  --creme: #fff6ee;
+  --texto: #2b2b2b;
+  --suave: #6b6b6b;
+}
+* { box-sizing: border-box; margin: 0; }
+body {
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--texto);
+  background: var(--laranja);
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+.confete {
+  position: fixed; inset: 0; pointer-events: none;
+  background-image:
+    radial-gradient(circle, #ffd23f 3px, transparent 4px),
+    radial-gradient(circle, #fff 2px, transparent 3px),
+    radial-gradient(circle, #ffb07a 3px, transparent 4px);
+  background-size: 90px 90px, 60px 60px, 120px 120px;
+  background-position: 0 0, 30px 20px, 50px 70px;
+  opacity: .55;
+  animation: cai 12s linear infinite;
+}
+@keyframes cai { to { background-position: 0 900px, 30px 620px, 50px 1270px; } }
+@media (prefers-reduced-motion: reduce) { .confete { animation: none; } }
+
+.card {
+  position: relative;
+  width: 100%; max-width: 420px;
+  background: var(--creme);
+  border-radius: 24px;
+  padding: 28px 22px 22px;
+  text-align: center;
+  box-shadow: 0 18px 40px rgba(0,0,0,.18);
+  animation: surge .6s cubic-bezier(.2,.9,.3,1.2) both;
+}
+@keyframes surge { from { transform: translateY(24px) scale(.96); opacity: 0; } }
+
+.marca {
+  font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--laranja-escuro);
+}
+h1 { font-size: 2.4rem; line-height: 1.05; margin-top: 10px; }
+h1 span { display: block; font-size: 1.1rem; font-weight: 500; color: var(--suave); margin-top: 6px; }
+
+.icone { color: var(--laranja); width: 190px; margin: 18px auto 4px; }
+.icone svg { width: 100%; height: auto; display: block; }
+
+.premio {
+  font-size: 1.9rem; font-weight: 800; color: var(--laranja-escuro);
+  line-height: 1.15;
+}
+
+.aviso {
+  margin-top: 20px; padding: 14px 16px;
+  background: #ffe7d4; border: 2px dashed var(--laranja);
+  border-radius: 14px; font-size: .98rem; line-height: 1.4;
+}
+.aviso strong { display: block; margin-bottom: 2px; }
+
+.regras { text-align: left; margin-top: 18px; }
+.regras h2 { font-size: 1rem; margin-bottom: 6px; }
+.regras ul { padding-left: 20px; line-height: 1.5; font-size: .95rem; }
+
+.btn {
+  display: block; margin-top: 18px; padding: 14px;
+  background: #25d366; color: #fff; font-weight: 700; text-decoration: none;
+  border-radius: 999px; font-size: 1.05rem;
+}
+.btn.sec {
+  margin-top: 10px; background: transparent; color: var(--laranja-escuro);
+  border: 2px solid var(--laranja);
+}
+
+footer { margin-top: 20px; font-size: .8rem; color: var(--suave); line-height: 1.5; }
+footer a { color: var(--laranja-escuro); }
