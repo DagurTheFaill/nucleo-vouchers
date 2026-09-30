@@ -48,11 +48,16 @@ body {
 h1 { font-size: 2.4rem; line-height: 1.05; margin-top: 10px; }
 h1 span { display: block; font-size: 1.1rem; font-weight: 500; color: var(--suave); margin-top: 6px; }
 
-.foto {
-  display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover;
-  margin: 18px 0 14px; border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+.icone { color: var(--laranja); width: 190px; max-width: 100%; margin: 18px auto 4px; }
+.icone svg { width: 100%; height: auto; display: block; }
+.icone:has(img) { width: 240px; }
+.icone img {
+  width: 100%; height: auto; display: block;
+  filter: drop-shadow(0 8px 10px rgba(0,0,0,.18));
+  animation: flutua 3.5s ease-in-out infinite;
 }
+@keyframes flutua { 50% { transform: translateY(-6px) rotate(-1.5deg); } }
+@media (prefers-reduced-motion: reduce) { .icone img { animation: none; } }
 
 .premio {
   font-size: 1.9rem; font-weight: 800; color: var(--laranja-escuro);
